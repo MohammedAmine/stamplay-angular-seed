@@ -1,7 +1,7 @@
 # Stamplay Angular Seed Project
 A starter project for Stamplay apps built with AngularJS
 
-![Angular Starter Project](http://s23.postimg.org/r8hjkv0c9/Screen_Shot_2016_01_05_at_4_04_55_PM.png)
+![Angular Starter Project](https://cloud.githubusercontent.com/assets/7504299/12131415/3dddfb72-b3c7-11e5-97a0-f32766b8dc99.png)
 
 ### Setup Instructions
 
