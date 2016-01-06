@@ -1,2 +1,27 @@
-# stamplay-angular-seed
-The seed for Stamplay+AngularJS apps
+# Stamplay Angular Seed Project
+A starter project for Stamplay apps built with AngularJS
+
+### Setup Instructions
+
+- Clone project : `git clone https://github.com/Stamplay/stamplay-angular-seed.git`
+
+- Install the project dependencies : `npm install` & `bower install`
+
+- Configure Stamplay Project : Input your `APP ID` and `API KEY` from your Stamplay app dashboard in the corresponding properties in the `stamplay.json` file in the root of the seed project.
+
+- Create a new **Object** schema on Stamplay, named "**note**", with a **body** property as a *string*.
+
+
+### Running locally for development
+
+- Start development build : `gulp dev`
+
+- Start development server : `stamplay start` & navigate to `localhost:8080`
+
+### Deploying the project
+
+- Start production build : `gulp build`
+
+- Run Stamplay CLI command : `stamplay deploy`
+
+- Enter commit message for deploy.
