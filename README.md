@@ -1,8 +1,6 @@
 # Stamplay Angular Seed Project
 A starter project for Stamplay apps built with AngularJS
 
-![Angular Starter Project](https://cloud.githubusercontent.com/assets/7504299/12131415/3dddfb72-b3c7-11e5-97a0-f32766b8dc99.png)
-
 ### Setup Instructions
 
 - Clone project : `git clone https://github.com/Stamplay/stamplay-angular-seed.git`
@@ -27,3 +25,6 @@ A starter project for Stamplay apps built with AngularJS
 - Run Stamplay CLI command : `stamplay deploy`
 
 - Enter commit message for deploy.
+
+#### Preview
+<img src="https://cloud.githubusercontent.com/assets/7504299/12131415/3dddfb72-b3c7-11e5-97a0-f32766b8dc99.png" style="border:2px solid #eee;"/>
