@@ -1,6 +1,6 @@
 {
-  "appId": "stamplay-angular-seed",
-  "apiKey": "81ca3028f17febbcfc97afa5aca12ebd6671ec8ac54f101b604b66e0a974cdee",
+  "appId": "YOUR_APP_ID",
+  "apiKey": "YOUR_APP_API_KEY",
   "public": "build",
   "ignore": [
     "stamplay.json",
