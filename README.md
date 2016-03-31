@@ -5,6 +5,9 @@ A starter project for Stamplay apps built with AngularJS
 
 - Clone project : `git clone https://github.com/Stamplay/stamplay-angular-seed.git`
 
+- NOTE! : If you want to use version 1.x of the Stamplay JavaScript SDK, checkout the branch after cloning with the following command:
+	`git checkout v1-sdk`
+
 - Install the project dependencies : `npm install` & `bower install`
 
 - Configure Stamplay Project : Input your `APP ID` and `API KEY` from your Stamplay app dashboard in the corresponding properties in the `stamplay.json` file in the root of the seed project.
@@ -24,7 +27,6 @@ A starter project for Stamplay apps built with AngularJS
 
 - Run Stamplay CLI command : `stamplay deploy`
 
-- Enter commit message for deploy.
 
 #### Preview
 <img src="https://cloud.githubusercontent.com/assets/7504299/12131415/3dddfb72-b3c7-11e5-97a0-f32766b8dc99.png" style="border:2px solid #eee;"/>
