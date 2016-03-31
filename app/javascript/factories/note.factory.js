@@ -2,58 +2,54 @@ angular.module("app").factory("NoteFactory", ["$stamplay", "$q", function($stamp
   return {
     getNotes : function() {
       var q = $q.defer();
-      var notes = new $stamplay.Cobject("note").Collection;
-      notes.populateOwner().fetch()
-        .then(function() {
-          q.resolve(notes.instance);
-        }, function() {
-          q.reject();
-        })
-        return q.promise;
+      $stamplay.Object("note").get({
+        populate_owner : true
+      }).then(function(res) {
+        q.resolve(res.data);
+      }, function(err) {
+        q.reject(err);
+      })
+      return q.promise;
     },
     updateNote : function(note) {
       var q = $q.defer();
-        note.set("body", note.instance.body);
-        note.save()
-          .then(function() {
-            q.resolve(note);
-          }, function() {
-            q.reject();
-          })
-        return q.promise;
+      $stamplay.Object("note").patch(note._id, {
+        body : note.body
+      }).then(function(res) {
+        q.resolve(res);
+      }, function(err) {
+        q.reject(err);
+      })
+      return q.promise;
     },
     createNote : function(body, idx) {
       var q = $q.defer();
-      var note = new $stamplay.Cobject("note").Model;
-      var user = new $stamplay.User().Model;
-      note.set("body", body)
-      note.save()
-        .then(function() {
-          user.currentUser().then(function() {
-            if(user.isLogged()) {
-              note.instance.owner = user.instance;
-              var res = { note : note, idx : idx };
-              q.resolve(res);
+      $stamplay.Object("note").save({
+        body : body
+      }).then(function(res) {
+        $stamplay.User.currentUser()
+          .then(function(res) {
+            if(res.hasOwnProperty("user")) {
+              note.owner = res.user;
+              q.resolve({ note : note, idx : idx });
             } else{
-              var res = { note : note, idx : idx };
-              q.resolve(res);
+              q.resolve({ note : note, idx : idx });
             }
           })
-
-        }, function() {
-          q.reject();
-        })
-        return q.promise;
+      }, function(err) {
+        q.reject(err);
+      })
+      return q.promise;
     },
     deleteNote : function(note) {
       var q = $q.defer();
-        note.destroy()
-          .then(function() {
-            q.resolve();
-          }, function() {
-            q.reject();
-          })
-        return q.promise;
+      $stamplay.Object("note").remove(note._id)
+        .then(function(res) {
+          q.resolve();
+        }, function(err) {
+          q.reject();
+        })
+      return q.promise;
     }
   }
 }])

@@ -38,11 +38,12 @@ angular.module("app").controller("NoteController", ["NoteFactory", "$uibModal", 
     var body = vm.new;
     if(body.length < 1) return;
     var owner = $rootScope.user ? $rootScope.user.email : "anonymous"
-    var item = { instance : { body : vm.new, owner : { email : owner } } };
+    var item = {  body : vm.new, owner : { email : owner }  };
     vm.new = "";
     vm.notes.push(item);
     NoteFactory.createNote(body, length)
       .then(function(res) {
+        console.log(res)
         vm.notes[res.idx] = res.note;
       }, function() {
         console.error("Error: failed to create note.")

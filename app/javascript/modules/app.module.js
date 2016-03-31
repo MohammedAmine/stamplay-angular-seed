@@ -21,12 +21,10 @@ angular.module("app", [
 
   Stamplay.init("stamplay-angular-seed");
 
-  var user = new Stamplay.User().Model;
-
-  user.currentUser()
-    .then(function() {
-      if(user.isLogged()) {
-        $rootScope.user = user.instance;
+  Stamplay.User.currentUser()
+    .then(function(res) {
+      if(res.hasOwnProperty("user")) {
+        $rootScope.user = res.user;
         $rootScope.$apply();
       } else {
         $rootScope.user = false;
